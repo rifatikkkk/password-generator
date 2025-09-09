@@ -1,4 +1,4 @@
-interface Props {
+export interface PasswordConfig {
   hasLowercase?: boolean;
   hasUppercase?: boolean;
   hasNumbers?: boolean;
@@ -12,7 +12,7 @@ export const generatePassword = ({
   hasNumbers = false,
   hasSymbols = false,
   length = 8,
-}: Props = {}) => {
+}: PasswordConfig = {}) => {
   const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   const lowercaseChars = "abcdefghijklmnopqrstuvwxyz";
   const numberChars = "0123456789";
