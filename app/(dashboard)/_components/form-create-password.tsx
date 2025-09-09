@@ -23,6 +23,7 @@ import {
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
+import FormSavePassword from "./form-save-password";
 
 const options = [
   {
@@ -172,11 +173,16 @@ const FormCreatePassword = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 pt-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 pt-4 gap-2">
                 <Button type="submit" className="cursor-pointer">
                   <ShieldCheck />
                   Generate new password
                 </Button>
+
+                <FormSavePassword
+                  password={password}
+                  passwordConfig={form.getValues()}
+                />
               </div>
             </form>
           </Form>
